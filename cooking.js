@@ -1,5 +1,5 @@
 document.getElementById("searchButton").addEventListener("click", function() {
-    fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
+    fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata')
         .then(res => res.json())
         .then(data => {
             const foodCard = document.getElementById("foodCards");
