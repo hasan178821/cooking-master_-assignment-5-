@@ -1,28 +1,3 @@
-/* // let getInputValue = document.getElementById("searchInput").value.trim();
-fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=a`)
-    .then(res => res.json())
-    .then(data => displayAllFoods(data));
-
-
-const displayAllFoods = foodCard => {
-    const cardsFood = document.getElementById('foodCards');
-    foodCard.forEach(card => {
-        const foodDiv = document.createElement('div');
-        foodDiv.className = 'allItem';
-
-        const foodInfo = `
-        <img src="${meals.strMealThumb}">
-        <h4>${meals.strMeal}</h4>
-        `;
-
-        foodDiv.innerHTML = foodInfo;
-        cardsFood.appendChild(foodDiv);
-
-    });
-} */
-
-
-
 const searchInputValue = document.getElementById("searchInput");
 document.getElementById("searchButton").addEventListener("click", function() {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${searchInputValue.value}`)
@@ -32,14 +7,22 @@ document.getElementById("searchButton").addEventListener("click", function() {
     const displayAllFoods = allFoods => {
         // console.log(allFoods.meals[0].strMeal);
         const foodDiv = document.getElementById("foodCards");
+        const newDiv = document.createElement('div');
 
-        const image = document.createElement("img");
-        image.src = `${allFoods.meals[0].strMealThumb}`;
-        foodDiv.appendChild(image);
+        // const image = document.createElement("img");
+        // image.src = `${allFoods.meals[0].strMealThumb}`;
+        // newDiv.appendChild(image);
 
-        const h4 = document.createElement("h4");
-        h4.innerText = `${allFoods.meals[0].strMeal}`;
-        foodDiv.appendChild(h4);
+        // const h4 = document.createElement("h4");
+        // h4.innerText = `${allFoods.meals[0].strMeal}`;
+        // newDiv.appendChild(h4);
+        const foodInfo = `
+        <img src="${allFoods.meals[0].strMealThumb}">
+        <h4>${allFoods.meals[0].strMeal}</h4>
+        `
+        foodDiv.innerHTML = foodInfo;
+
+        foodDiv.appendChild(newDiv);
 
     }
 
