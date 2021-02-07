@@ -9,19 +9,13 @@ document.getElementById("searchButton").addEventListener("click", function() {
         const foodDiv = document.getElementById("foodCards");
         const newDiv = document.createElement('div');
 
-        // const image = document.createElement("img");
-        // image.src = `${allFoods.meals[0].strMealThumb}`;
-        // newDiv.appendChild(image);
-
-        // const h4 = document.createElement("h4");
-        // h4.innerText = `${allFoods.meals[0].strMeal}`;
-        // newDiv.appendChild(h4);
+        newDiv.className = 'item';
         const foodInfo = `
-        <img src="${allFoods.meals[0].strMealThumb}">
-        <h4>${allFoods.meals[0].strMeal}</h4>
-        `
-        foodDiv.innerHTML = foodInfo;
+        <img src="${allFoods.meals[1].strMealThumb}">
+        <h4>${allFoods.meals[1].strMeal}</h4>
+        `;
 
+        foodDiv.innerHTML = foodInfo;
         foodDiv.appendChild(newDiv);
 
     }

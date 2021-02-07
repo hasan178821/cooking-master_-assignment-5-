@@ -28,4 +28,11 @@ section {
     text-align: center;
 }
 
-#foodCards {}
+#foodCards {
+    margin: 40px 50px;
+}
+
+.item {
+    width: 22%;
+    text-align: center;
+}
