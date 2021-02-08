@@ -2,22 +2,26 @@ const searchInputValue = document.getElementById("searchInput");
 document.getElementById("searchButton").addEventListener("click", function() {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${searchInputValue.value}`)
         .then(response => response.json())
-        .then(data => displayAllFoods(data));
+        .then(data => displayAllFoods(data.meals));
 
-    const displayAllFoods = allFoods => {
-        // console.log(allFoods.meals[0].strMeal);
-        const foodDiv = document.getElementById("foodCards");
+})
+const displayAllFoods = allFoods => {
+    console.log(allFoods)
+
+    const foodDiv = document.getElementById("foodCards");
+    for (let i = 0; i < allFoods.length; i++) {
+        const singleItem = allFoods[i];
+        console.log(singleItem)
         const newDiv = document.createElement('div');
 
         newDiv.className = 'item';
         const foodInfo = `
-        <img src="${allFoods.meals[1].strMealThumb}">
-        <h4>${allFoods.meals[1].strMeal}</h4>
-        `;
+            <img src="${singleItem.strMealThumb}">
+            <h4>${singleItem.strMeal}</h4>
+            `;
 
-        foodDiv.innerHTML = foodInfo;
+        newDiv.innerHTML = foodInfo;
         foodDiv.appendChild(newDiv);
-
     }
 
-})
+}
