@@ -26,7 +26,6 @@ const displayAllFoods = allFoods => {
 
 }
 
-// loop calai ber korte hobe
 const displayDetailsInfo = idMeal => {
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
     fetch(url)
@@ -51,7 +50,5 @@ const displayIngrediants = ingrediants => {
     <p>9| ${ingrediants.strIngredient9}</p>
     <p>10| ${ingrediants.strIngredient10}</p>
     `;
-
-
 
 };
