@@ -4,6 +4,8 @@ document.getElementById("searchButton").addEventListener("click", function() {
         .then(response => response.json())
         .then(data => displayAllFoods(data.meals));
 
+    document.getElementById('searchInput').value = "";
+
 })
 const displayAllFoods = allFoods => {
     console.log(allFoods)
@@ -13,10 +15,10 @@ const displayAllFoods = allFoods => {
         const singleItem = allFoods[i];
         console.log(singleItem)
         const newDiv = document.createElement('div');
-
         newDiv.className = 'item';
+
         const foodInfo = `
-            <img src="${singleItem.strMealThumb}">
+            <img src="${singleItem.strMealThumb}" onclick="displayDetailsInfo()">
             <h4>${singleItem.strMeal}</h4>
             `;
 
@@ -24,4 +26,10 @@ const displayAllFoods = allFoods => {
         foodDiv.appendChild(newDiv);
     }
 
+}
+
+const displayDetailsInfo = details => {
+    // fetch('https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772')
+    //     .then(response => response.json())
+    //     .then(data => console.log())
 }

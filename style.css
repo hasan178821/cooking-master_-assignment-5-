@@ -20,7 +20,8 @@ section {
 
 #foodCards img {
     width: 250px;
-    border-radius: 10px;
+    height: 100%;
+    border-radius: 10px 10px 0 0;
 }
 
 #foodCards h4 {
@@ -28,11 +29,28 @@ section {
     text-align: center;
 }
 
-#foodCards {
-    margin: 40px 50px;
-}
-
 .item {
     width: 22%;
     text-align: center;
+    display: grid;
+}
+
+#foodCards {
+    margin: 40px 3px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15%;
+}
+
+
+/* .item {
+    background-color: red;
+} */
+
+#foodCards h4 {
+    margin-bottom: 40px;
+    padding: 15px 5px;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+    font-size: 20px;
 }
